@@ -1,0 +1,15 @@
+clear all;
+[sig fs] = audioread('two_drums.wav');
+sound (sig, fs)
+
+N = 0.02 * fs;
+sig_e = sig[1,N];
+Energy = sum(sig_e, 1);
+
+
+figure(1);
+clf;
+plot(sig);
+xlabel('Sample no');
+ylabel('signal {v}')
+title('Two Drum')
